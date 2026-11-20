@@ -1,0 +1,6 @@
+{
+  "name": "DoseCerta",
+  "description": "Aplicativo Android nativo Offline-First para gerenciamento e lembrete de medicamentos com cálculo automático de doses, alarmes locais e consulta de bulas via OpenFDA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
