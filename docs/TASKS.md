@@ -13,24 +13,24 @@ Objetivo: Consolidar toda a especificação técnica, decisões arquiteturais, p
 - [x] Criar `docs/ARCHITECTURE.md` detalhando Clean Architecture, Regra de Dependência, UDF, Offline-First, AlarmManager e estrutura de pacotes (`com.example.dosecerta`).
 - [x] Criar `docs/TASKS.md` com decomposição sequencial em 6 Marcos em formato checklist.
 - [x] Criar `README.md` (Versão Inicial) com todas as seções obrigatórias do projeto.
-- [ ] Configurar `gradle/libs.versions.toml` e `app/build.gradle.kts` com as dependências finais: Jetpack Compose + Material 3, Navigation Compose, Coroutines/StateFlow, Room + KSP, Retrofit + OkHttp + Moshi/Serialization, Koin (`koin-android`, `koin-androidx-compose`), JUnit 4, MockK, Turbine e `kotlinx-coroutines-test`.
-- [ ] Estruturar os pacotes base sob `com.example.dosecerta` e validar compilação inicial do projeto.
+- [x] Configurar `gradle/libs.versions.toml` e `app/build.gradle.kts` com as dependências finais: Jetpack Compose + Material 3, Navigation Compose, Coroutines/StateFlow, Room + KSP, Retrofit + OkHttp + Moshi/Serialization, Koin (`koin-android`, `koin-androidx-compose`), JUnit 4, MockK, Turbine e `kotlinx-coroutines-test`.
+- [x] Estruturar os pacotes base sob `com.example.dosecerta` e validar compilação inicial do projeto.
 
 ---
 
 ## Marco 2 — Camada de Domínio (100% Kotlin Puro) e Testes Unitários
 Objetivo: Implementar todas as entidades, contratos e regras de negócio sem nenhuma dependência de Android, Room ou Retrofit, garantindo alta cobertura de testes.
 
-- [ ] Criar modelos de domínio imutáveis (`Treatment`, `Dose`, `DoseStatus`, `TreatmentWithDoses`, `AdherenceSummary`, `DrugInfo`, `DrugSearchResult`).
-- [ ] Definir contratos de repositório (`TreatmentRepository`, `DrugInfoRepository`) e contratos de infraestrutura (`DoseAlarmScheduler`, `TimeProvider`).
-- [ ] Implementar `CalculateDoseScheduleUseCase` (algoritmo puro de geração de cronograma a partir de `startTimeMillis`, `intervalHours` e `durationDays`, cobrindo validações e ordenação cronológica).
-- [ ] Implementar `CreateTreatmentUseCase` (validação de entrada, cálculo das doses, persistência e agendamento de alarmes futuros).
-- [ ] Implementar `ToggleDoseStatusUseCase` (alternância `TAKEN`/`PENDING`, registro de `takenAtMillis`, cancelamento/reagendamento do alarme).
-- [ ] Implementar `DeleteTreatmentUseCase`, `ObserveTreatmentsUseCase`, `ObserveTodayDosesUseCase`, `ObserveTreatmentDetailUseCase` e `ReschedulePendingAlarmsUseCase`.
-- [ ] Implementar `SearchDrugInfoUseCase` e `ObserveCachedDrugsUseCase`.
-- [ ] Escrever testes unitários exaustivos para `CalculateDoseScheduleUseCaseTest` (JUnit 4): intervalos de 4h/6h/8h/12h/24h, durações variadas, virada de dia/mês/ano bissexto, intervalo maior que duração e entradas inválidas.
-- [ ] Escrever testes unitários para `CreateTreatmentUseCaseTest` e `ToggleDoseStatusUseCaseTest` (JUnit 4 + MockK), verificando chamadas ao repositório e ao `DoseAlarmScheduler`.
-- [ ] Executar `gradle :app:testDebugUnitTest` e confirmar 100% de aprovação na camada de domínio.
+- [x] Criar modelos de domínio imutáveis (`Treatment`, `Dose`, `DoseStatus`, `TreatmentWithDoses`, `AdherenceSummary`, `DrugInfo`, `DrugSearchResult`).
+- [x] Definir contratos de repositório (`TreatmentRepository`, `DrugInfoRepository`) e contratos de infraestrutura (`DoseAlarmScheduler`, `TimeProvider`).
+- [x] Implementar `CalculateDoseScheduleUseCase` (algoritmo puro de geração de cronograma a partir de `startTimeMillis`, `intervalHours` e `durationDays`, cobrindo validações e ordenação cronológica).
+- [x] Implementar `CreateTreatmentUseCase` (validação de entrada, cálculo das doses, persistência e agendamento de alarmes futuros).
+- [x] Implementar `ToggleDoseStatusUseCase` (alternância `TAKEN`/`PENDING`, registro de `takenAtMillis`, cancelamento/reagendamento do alarme).
+- [x] Implementar `DeleteTreatmentUseCase`, `ObserveTreatmentsUseCase`, `ObserveTodayDosesUseCase`, `ObserveTreatmentDetailUseCase` e `ReschedulePendingAlarmsUseCase`.
+- [x] Implementar `SearchDrugInfoUseCase` e `ObserveCachedDrugsUseCase`.
+- [x] Escrever testes unitários exaustivos para `CalculateDoseScheduleUseCaseTest` (JUnit 4): intervalos de 4h/6h/8h/12h/24h, durações variadas, virada de dia/mês/ano bissexto, intervalo maior que duração e entradas inválidas.
+- [x] Escrever testes unitários para `CreateTreatmentUseCaseTest` e `ToggleDoseStatusUseCaseTest` (JUnit 4 + MockK), verificando chamadas ao repositório e ao `DoseAlarmScheduler`.
+- [x] Executar `gradle :app:testDebugUnitTest` e confirmar 100% de aprovação na camada de domínio.
 
 ---
 
