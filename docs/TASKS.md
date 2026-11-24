@@ -37,15 +37,15 @@ Objetivo: Implementar todas as entidades, contratos e regras de negócio sem nen
 ## Marco 3 — Camada de Dados Offline-First (Room + OpenFDA Retrofit) e Testes
 Objetivo: Construir a persistência local como Single Source of Truth e a integração resiliente com a API REST OpenFDA com cache automático.
 
-- [ ] Implementar entidades Room (`TreatmentEntity`, `DoseEntity` com chave estrangeira `CASCADE`, `DrugInfoEntity`) e `DoseCertaDatabase`.
-- [ ] Implementar DAOs reativos (`TreatmentDao`, `DoseDao`, `DrugInfoDao`) com queries ordenadas, filtros de doses pendentes/do dia e busca textual no cache local.
-- [ ] Implementar DTOs da API OpenFDA (`OpenFdaResponseDto`, `DrugLabelDto`, `OpenFdaMetaDto`) e interface `OpenFdaApiService` (`GET drug/label.json`).
-- [ ] Implementar mappers puros (`TreatmentMapper`, `DoseMapper`, `DrugInfoMapper`) com normalização segura de listas/campos nulos da OpenFDA.
-- [ ] Implementar `TreatmentRepositoryImpl` garantindo atomicidade na gravação de tratamento + doses.
-- [ ] Implementar `DrugInfoRepositoryImpl` com estratégia Offline-First: consulta remota → upsert no Room → fallback automático para cache local em falhas de conectividade (`IOException`/timeout) e tratamento de `404` como lista vazia.
-- [ ] Configurar módulos Koin `NetworkModule` e `DataModule`.
-- [ ] Escrever testes unitários `TreatmentRepositoryImplTest` e `DrugInfoRepositoryImplTest` (JUnit 4 + MockK + Turbine) validando persistência SSOT, fallback offline, atualização de cache e mapeamento de erros HTTP/rede.
-- [ ] Executar suíte de testes unitários e validar compilação limpa.
+- [x] Implementar entidades Room (`TreatmentEntity`, `DoseEntity` com chave estrangeira `CASCADE`, `DrugInfoEntity`) e `DoseCertaDatabase`.
+- [x] Implementar DAOs reativos (`TreatmentDao`, `DoseDao`, `DrugInfoDao`) com queries ordenadas, filtros de doses pendentes/do dia e busca textual no cache local.
+- [x] Implementar DTOs da API OpenFDA (`OpenFdaResponseDto`, `DrugLabelDto`, `OpenFdaMetaDto`) e interface `OpenFdaApiService` (`GET drug/label.json`).
+- [x] Implementar mappers puros (`TreatmentMapper`, `DoseMapper`, `DrugInfoMapper`) com normalização segura de listas/campos nulos da OpenFDA.
+- [x] Implementar `TreatmentRepositoryImpl` garantindo atomicidade na gravação de tratamento + doses.
+- [x] Implementar `DrugInfoRepositoryImpl` com estratégia Offline-First: consulta remota → upsert no Room → fallback automático para cache local em falhas de conectividade (`IOException`/timeout) e tratamento de `404` como lista vazia.
+- [x] Configurar módulos Koin `NetworkModule` e `DataModule`.
+- [x] Escrever testes unitários `TreatmentRepositoryImplTest` e `DrugInfoRepositoryImplTest` (JUnit 4 + MockK + Turbine) validando persistência SSOT, fallback offline, atualização de cache e mapeamento de erros HTTP/rede.
+- [x] Executar suíte de testes unitários e validar compilação limpa.
 
 ---
 
