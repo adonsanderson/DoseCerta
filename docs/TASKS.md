@@ -52,13 +52,13 @@ Objetivo: Construir a persistência local como Single Source of Truth e a integr
 ## Marco 4 — Despertador Local (`AlarmManager`, `BroadcastReceiver` e Notificações)
 Objetivo: Garantir disparos sonoros confiáveis no horário exato da dose, mesmo com o aplicativo encerrado, tela apagada ou sem conexão à internet.
 
-- [ ] Declarar permissões necessárias no `AndroidManifest.xml` (`INTERNET`, `POST_NOTIFICATIONS`, `SCHEDULE_EXACT_ALARM`, `RECEIVE_BOOT_COMPLETED`, `VIBRATE`) e registrar os `BroadcastReceiver`s.
-- [ ] Implementar `NotificationHelper` com criação do canal `dose_reminders_channel` (`IMPORTANCE_HIGH`, som de alarme/notificação, vibração) e construção de notificações com título, nome do medicamento, horário, `PendingIntent` de abertura e ação rápida **"Marcar como Tomada"**.
-- [ ] Implementar `AndroidDoseAlarmScheduler` utilizando `AlarmManager` (`setExactAndAllowWhileIdle` com checagem de `canScheduleExactAlarms()` para Android 12+ e `requestCode` determinístico baseado em `doseId`), incluindo métodos `scheduleDose`, `scheduleDoses`, `cancelDose` e `cancelDoses`.
-- [ ] Implementar `DoseAlarmReceiver` para interceptar o alarme no horário exato e disparar a notificação sonora.
-- [ ] Implementar `DoseActionReceiver` para permitir marcar a dose como `TAKEN` diretamente da barra de notificações usando `goAsync()` + Coroutines.
-- [ ] Implementar `BootCompletedReceiver` para reagendar automaticamente todas as doses pendentes futuras após reinicialização do dispositivo.
-- [ ] Registrar `AlarmModule` no Koin e validar fluxo de permissão de notificações (Android 13+) e alarmes exatos (Android 12+).
+- [x] Declarar permissões necessárias no `AndroidManifest.xml` (`INTERNET`, `POST_NOTIFICATIONS`, `SCHEDULE_EXACT_ALARM`, `RECEIVE_BOOT_COMPLETED`, `VIBRATE`) e registrar os `BroadcastReceiver`s.
+- [x] Implementar `NotificationHelper` com criação do canal `dose_reminders_channel` (`IMPORTANCE_HIGH`, som de alarme/notificação, vibração) e construção de notificações com título, nome do medicamento, horário, `PendingIntent` de abertura e ação rápida **"Marcar como Tomada"**.
+- [x] Implementar `AndroidDoseAlarmScheduler` utilizando `AlarmManager` (`setExactAndAllowWhileIdle` com checagem de `canScheduleExactAlarms()` para Android 12+ e `requestCode` determinístico baseado em `doseId`), incluindo métodos `scheduleDose`, `scheduleDoses`, `cancelDose` e `cancelDoses`.
+- [x] Implementar `DoseAlarmReceiver` para interceptar o alarme no horário exato e disparar a notificação sonora.
+- [x] Implementar `DoseActionReceiver` para permitir marcar a dose como `TAKEN` diretamente da barra de notificações usando `goAsync()` + Coroutines.
+- [x] Implementar `BootCompletedReceiver` para reagendar automaticamente todas as doses pendentes futuras após reinicialização do dispositivo.
+- [x] Registrar `AlarmModule` no Koin e validar fluxo de permissão de notificações (Android 13+) e alarmes exatos (Android 12+).
 
 ---
 

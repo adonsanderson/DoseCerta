@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DoseCerta</string>
+    <string name="notification_channel_name">Lembretes de Medicamentos</string>
+    <string name="notification_channel_description">Notificações sonoras no horário exato de cada dose agendada.</string>
+    <string name="notification_dose_title">Hora do medicamento: %1$s</string>
+    <string name="notification_dose_body_with_dosage">%1$s • Horário agendado: %2$s</string>
+    <string name="notification_dose_body_no_dosage">Horário agendado: %1$s</string>
+    <string name="notification_action_mark_taken">Marcar como tomada</string>
 </resources>
