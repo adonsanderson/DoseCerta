@@ -6,6 +6,7 @@ import com.example.dosecerta.di.alarmModule
 import com.example.dosecerta.di.dataModule
 import com.example.dosecerta.di.domainModule
 import com.example.dosecerta.di.networkModule
+import com.example.dosecerta.di.presentationModule
 import org.koin.android.ext.android.get
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext
@@ -22,7 +23,8 @@ class DoseCertaApplication : Application() {
                     networkModule,
                     dataModule,
                     alarmModule,
-                    domainModule
+                    domainModule,
+                    presentationModule
                 )
             }
         }

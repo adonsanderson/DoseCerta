@@ -1,9 +1,88 @@
 <resources>
     <string name="app_name">DoseCerta</string>
+
+    <!-- Notifications -->
     <string name="notification_channel_name">Lembretes de Medicamentos</string>
     <string name="notification_channel_description">Notificações sonoras no horário exato de cada dose agendada.</string>
     <string name="notification_dose_title">Hora do medicamento: %1$s</string>
     <string name="notification_dose_body_with_dosage">%1$s • Horário agendado: %2$s</string>
     <string name="notification_dose_body_no_dosage">Horário agendado: %1$s</string>
     <string name="notification_action_mark_taken">Marcar como tomada</string>
+
+    <!-- Navigation -->
+    <string name="nav_schedule">Cronograma</string>
+    <string name="nav_drugs">Bulas</string>
+    <string name="cd_back">Voltar</string>
+    <string name="cd_add_treatment">Cadastrar novo tratamento</string>
+
+    <!-- Common States -->
+    <string name="state_loading">Carregando...</string>
+    <string name="state_retry">Tentar novamente</string>
+    <string name="status_taken">Tomada</string>
+    <string name="status_pending">Pendente</string>
+    <string name="status_overdue">Atrasada</string>
+    <string name="medical_disclaimer">As informações abaixo vêm da base pública OpenFDA (FDA/EUA), têm caráter informativo e não substituem orientação médica ou farmacêutica.</string>
+
+    <!-- Home -->
+    <string name="home_title">DoseCerta</string>
+    <string name="home_subtitle">Seus horários e adesão offline</string>
+    <string name="home_today_adherence">Adesão de Hoje</string>
+    <string name="home_today_doses_section">Doses de Hoje</string>
+    <string name="home_treatments_section">Tratamentos Ativos</string>
+    <string name="home_empty_title">Nenhum tratamento cadastrado</string>
+    <string name="home_empty_message">Cadastre seu primeiro medicamento para calcular todos os horários automaticamente e ativar os despertadores locais.</string>
+    <string name="home_empty_cta">Novo tratamento</string>
+    <string name="home_no_doses_today">Nenhuma dose programada para hoje.</string>
+    <string name="home_permission_notifications_banner">Ative as notificações para receber alertas sonoros na hora exata de cada dose.</string>
+    <string name="home_permission_notifications_cta">Permitir</string>
+    <string name="home_permission_exact_alarm_banner">Ative Alarmes Exatos nas configurações para máxima pontualidade.</string>
+    <string name="home_permission_exact_alarm_cta">Configurar</string>
+
+    <!-- Add Treatment -->
+    <string name="add_treatment_title">Novo Tratamento</string>
+    <string name="field_medication_name">Nome do medicamento *</string>
+    <string name="field_medication_name_placeholder">Ex.: Amoxicilina 500mg</string>
+    <string name="field_dosage">Dosagem (opcional)</string>
+    <string name="field_dosage_placeholder">Ex.: 1 comprimido ou 5 ml</string>
+    <string name="field_first_dose">Primeira dose</string>
+    <string name="field_date">Data</string>
+    <string name="field_time">Horário</string>
+    <string name="field_interval_hours">Intervalo entre doses (horas) *</string>
+    <string name="field_duration_days">Duração do tratamento (dias) *</string>
+    <string name="field_notes">Observações (opcional)</string>
+    <string name="field_notes_placeholder">Ex.: Tomar após as refeições</string>
+    <string name="add_treatment_preview_title">Prévia do Cronograma</string>
+    <string name="add_treatment_preview_doses">%1$d doses serão calculadas e agendadas automaticamente</string>
+    <string name="add_treatment_save">Salvar e agendar alarmes</string>
+    <string name="dialog_confirm">Confirmar</string>
+    <string name="dialog_cancel">Cancelar</string>
+
+    <!-- Treatment Detail -->
+    <string name="detail_title">Detalhes do Tratamento</string>
+    <string name="detail_schedule_section">Cronograma Completo</string>
+    <string name="detail_delete_action">Excluir tratamento</string>
+    <string name="detail_delete_title">Excluir tratamento?</string>
+    <string name="detail_delete_message">Todas as doses deste tratamento serão removidas e os alarmes pendentes serão cancelados.</string>
+    <string name="detail_delete_confirm">Excluir</string>
+    <string name="detail_not_found">Tratamento não encontrado ou já excluído.</string>
+
+    <!-- Drug Search (OpenFDA) -->
+    <string name="drugs_title">Consulta de Bulas</string>
+    <string name="drugs_subtitle">OpenFDA com cache automático offline</string>
+    <string name="drugs_search_placeholder">Buscar em inglês (ex.: Ibuprofen, Amoxicillin)</string>
+    <string name="drugs_search_button">Buscar</string>
+    <string name="drugs_offline_cache_badge">Exibindo dados salvos no cache offline</string>
+    <string name="drugs_recent_cache_title">Consultas Salvas (Offline)</string>
+    <string name="drugs_search_results_title">Resultados da Consulta</string>
+    <string name="drugs_empty_cache_title">Nenhuma bula salva offline</string>
+    <string name="drugs_empty_cache_message">Pesquise medicamentos (como Ibuprofen, Acetaminophen ou Amoxicillin) para consultar advertências e salvá-las para acesso sem internet.</string>
+    <string name="drugs_empty_search_title">Nenhuma bula encontrada</string>
+    <string name="drugs_empty_search_message">Não encontramos registros na OpenFDA para este termo. Tente o nome do princípio ativo em inglês.</string>
+    <string name="drugs_section_indications">Indicações e Uso</string>
+    <string name="drugs_section_warnings">Advertências e Precauções</string>
+    <string name="drugs_section_dosage">Posologia e Administração</string>
+    <string name="drugs_section_contraindications">Contraindicações</string>
+    <string name="drugs_section_adverse">Reações Adversas</string>
+    <string name="drugs_not_available">Informação não informada neste registro.</string>
+    <string name="drugs_close_sheet">Fechar</string>
 </resources>
