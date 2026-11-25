@@ -6,7 +6,7 @@ import java.util.Date
 import java.util.Locale
 
 object DateTimeFormatters {
-    private val ptBrLocale = Locale("pt", "BR")
+    private val ptBrLocale: Locale = Locale.forLanguageTag("pt-BR")
 
     fun formatTime(millis: Long): String =
         SimpleDateFormat("HH:mm", ptBrLocale).format(Date(millis))

@@ -19,9 +19,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.MenuBook
 import androidx.compose.material.icons.outlined.Clear
 import androidx.compose.material.icons.outlined.CloudDone
-import androidx.compose.material.icons.outlined.MenuBook
 import androidx.compose.material.icons.outlined.OfflinePin
 import androidx.compose.material.icons.outlined.Search
 import androidx.compose.material3.AssistChip
@@ -235,7 +235,7 @@ fun DrugSearchScreen(
                             } else {
                                 stringResource(R.string.drugs_empty_cache_message)
                             },
-                            icon = Icons.Outlined.MenuBook,
+                            icon = Icons.AutoMirrored.Outlined.MenuBook,
                             modifier = Modifier.weight(1f)
                         )
                     }

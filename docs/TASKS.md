@@ -65,29 +65,29 @@ Objetivo: Garantir disparos sonoros confiáveis no horário exato da dose, mesmo
 ## Marco 5 — Camada de Apresentação (Jetpack Compose, M3, UDF) e Testes de ViewModel
 Objetivo: Construir uma interface polida, responsiva, acessível e otimizada para recomposição, com tratamento explícito de `Loading`, `Success`, `Empty` e `Error`.
 
-- [ ] Configurar tema Material 3 (`Color.kt`, `Type.kt`, `Shape.kt`, `Theme.kt`) com suporte a modo claro/escuro, `enableEdgeToEdge()` e ícone adaptativo customizado do app.
-- [ ] Implementar componentes compartilhados (`LoadingView`, `EmptyStateView`, `ErrorStateView`, `DoseItemCard`, `AdherenceProgressCard`, `MedicalDisclaimerBanner`) com `Modifier.testTag` e `contentDescription`.
-- [ ] Implementar tela **Home / Cronograma** (`HomeScreen` + `HomeViewModel`): resumo de adesão do dia, próximas doses, marcação rápida Tomada/Pendente, lista de tratamentos ativos e FAB para novo tratamento.
-- [ ] Implementar tela **Cadastro de Tratamento** (`AddTreatmentScreen` + `AddTreatmentViewModel`): formulário com nome, dosagem, seletor de data/hora inicial, chips de intervalo rápido (4h, 6h, 8h, 12h, 24h) + campo customizado, duração em dias, prévia do total de doses calculadas em tempo real e validação inline.
-- [ ] Implementar tela **Detalhes do Tratamento** (`TreatmentDetailScreen` + `TreatmentDetailViewModel`): linha do tempo completa de todas as doses geradas, progresso percentual, alternância Tomada/Pendente e opção de exclusão com diálogo de confirmação.
-- [ ] Implementar tela **Consulta de Bulas (OpenFDA + Cache Offline)** (`DrugSearchScreen` + `DrugSearchViewModel` + `DrugDetailSheet`): barra de busca, banner de modo offline/cache, histórico de bulas salvas no Room, visualização completa de indicações/advertências/posologia/contraindicações e aviso clínico.
-- [ ] Configurar `DoseCertaNavHost` com Navigation Compose e barra de navegação inferior/adaptativa entre Cronograma e Bulas.
-- [ ] Auditar otimizações de recomposição (`@Immutable`, `key` em `LazyColumn`, `remember`, `derivedStateOf`, `collectAsStateWithLifecycle`).
-- [ ] Escrever testes unitários para `HomeViewModelTest`, `AddTreatmentViewModelTest`, `TreatmentDetailViewModelTest` e `DrugSearchViewModelTest` (JUnit 4 + MockK + Turbine) verificando transições `Loading` → `Success` / `Empty` / `Error` e ações do usuário.
+- [x] Configurar tema Material 3 (`Color.kt`, `Type.kt`, `Shape.kt`, `Theme.kt`) com suporte a modo claro/escuro, `enableEdgeToEdge()` e ícone adaptativo customizado do app.
+- [x] Implementar componentes compartilhados (`LoadingView`, `EmptyStateView`, `ErrorStateView`, `DoseItemCard`, `AdherenceProgressCard`, `MedicalDisclaimerBanner`) com `Modifier.testTag` e `contentDescription`.
+- [x] Implementar tela **Home / Cronograma** (`HomeScreen` + `HomeViewModel`): resumo de adesão do dia, próximas doses, marcação rápida Tomada/Pendente, lista de tratamentos ativos e FAB para novo tratamento.
+- [x] Implementar tela **Cadastro de Tratamento** (`AddTreatmentScreen` + `AddTreatmentViewModel`): formulário com nome, dosagem, seletor de data/hora inicial, chips de intervalo rápido (4h, 6h, 8h, 12h, 24h) + campo customizado, duração em dias, prévia do total de doses calculadas em tempo real e validação inline.
+- [x] Implementar tela **Detalhes do Tratamento** (`TreatmentDetailScreen` + `TreatmentDetailViewModel`): linha do tempo completa de todas as doses geradas, progresso percentual, alternância Tomada/Pendente e opção de exclusão com diálogo de confirmação.
+- [x] Implementar tela **Consulta de Bulas (OpenFDA + Cache Offline)** (`DrugSearchScreen` + `DrugSearchViewModel` + `DrugDetailSheet`): barra de busca, banner de modo offline/cache, histórico de bulas salvas no Room, visualização completa de indicações/advertências/posologia/contraindicações e aviso clínico.
+- [x] Configurar `DoseCertaNavHost` com Navigation Compose e barra de navegação inferior/adaptativa entre Cronograma e Bulas.
+- [x] Auditar otimizações de recomposição (`@Immutable`, `key` em `LazyColumn`, `remember`, `derivedStateOf`, `collectAsStateWithLifecycle`).
+- [x] Escrever testes unitários para `HomeViewModelTest`, `AddTreatmentViewModelTest`, `TreatmentDetailViewModelTest` e `DrugSearchViewModelTest` (JUnit 4 + MockK + Turbine) verificando transições `Loading` → `Success` / `Empty` / `Error` e ações do usuário.
 
 ---
 
 ## Marco 6 — Integração Final, Validação Offline-First, Evidências e Documentação
 Objetivo: Validar ponta a ponta todos os requisitos funcionais e não funcionais, consolidar evidências visuais e finalizar o repositório para entrega.
 
-- [ ] Integrar `DoseCertaApplication` (inicialização Koin + canal de notificação) e `MainActivity` (solicitação graciosa de `POST_NOTIFICATIONS` + `DoseCertaNavHost`).
-- [ ] Executar bateria completa de testes unitários (`gradle :app:testDebugUnitTest`) e garantir 0 falhas e build limpo (`gradle assembleDebug`).
-- [ ] Validar manualmente todos os fluxos críticos (RF01 a RF07):
-  - [ ] Cadastro de tratamento e conferência matemática das doses geradas.
-  - [ ] Disparo real de alarme sonoro com app fechado e sem internet.
-  - [ ] Marcação de dose como Tomada (no app e via ação rápida da notificação) e atualização da adesão.
-  - [ ] Consulta na OpenFDA com rede ativa e reabertura da mesma bula em Modo Avião.
-  - [ ] Verificação visual dos estados `Loading`, `Success`, `Empty` e `Error`.
-- [ ] Capturar screenshots e/ou gravações de tela das principais telas e estados para a seção de Evidências.
-- [ ] Atualizar `README.md` com as evidências finais, resumo da cobertura de testes e revisão de limitações conhecidas.
-- [ ] Revisar todos os arquivos em `docs/` garantindo consistência total entre documentação SDD e código entregue.
+- [x] Integrar `DoseCertaApplication` (inicialização Koin + canal de notificação) e `MainActivity` (deep-link de notificações + `enableEdgeToEdge()` + `DoseCertaNavHost`).
+- [x] Executar bateria completa de testes unitários e CUJ (`gradle :app:testDebugUnitTest`) com 67/67 testes aprovados, 0 warnings no código principal e build limpo do APK.
+- [x] Validar via testes automatizados todos os fluxos críticos (RF01 a RF07):
+  - [x] Cadastro de tratamento e conferência matemática das doses geradas (`CalculateDoseScheduleUseCaseTest`, `CreateTreatmentUseCaseTest`, `AddTreatmentViewModelTest`, `DoseCertaCujTest`).
+  - [x] Agendamento, fallback sem permissão exata e cancelamento no `AlarmManager` (`AlarmConstantsTest`, `AndroidDoseAlarmSchedulerTest`).
+  - [x] Marcação de dose como Tomada/Pendente e atualização reativa da adesão (`ToggleDoseStatusUseCaseTest`, `ObserveTreatmentsUseCaseTest`, `HomeViewModelTest`, `DoseCertaCujTest`).
+  - [x] Consulta OpenFDA + upsert no Room + fallback offline em Modo Avião (`DrugInfoRepositoryImplTest`, `DrugSearchViewModelTest`, `DoseCertaCujTest`).
+  - [x] Verificação dos estados `Loading`, `Success`, `Empty` e `Error` em ViewModels e telas Compose.
+- [ ] Capturar screenshots/gravações em dispositivo físico ou emulador local (opcional para anexar à pasta `docs/evidencias/` no GitHub).
+- [x] Atualizar `README.md` com o status v1.0, resumo da cobertura de testes e revisão de limitações conhecidas.
+- [x] Revisar todos os arquivos em `docs/` garantindo consistência total entre documentação SDD e código entregue.

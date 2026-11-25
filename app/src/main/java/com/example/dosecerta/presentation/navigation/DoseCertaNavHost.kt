@@ -6,10 +6,10 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.automirrored.outlined.MenuBook
 import androidx.compose.material.icons.filled.Medication
-import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.outlined.Medication
-import androidx.compose.material.icons.outlined.MenuBook
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
@@ -58,8 +58,8 @@ private val TOP_LEVEL_DESTINATIONS = listOf(
     TopLevelDestination(
         route = DoseCertaRoute.DRUG_SEARCH,
         labelRes = R.string.nav_drugs,
-        selectedIcon = Icons.Filled.MenuBook,
-        unselectedIcon = Icons.Outlined.MenuBook,
+        selectedIcon = Icons.AutoMirrored.Filled.MenuBook,
+        unselectedIcon = Icons.AutoMirrored.Outlined.MenuBook,
         testTag = "nav_tab_drugs"
     )
 )
